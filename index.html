@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Dhruvi Pipalva — Python Backend Developer & AI/ML Engineer. Building scalable APIs and intelligent systems." />
+  <title>Dhruvi Pipalva — Python Backend Developer</title>
+
+  <!-- ═══ FONTS ═══ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Figtree:ital,wght@0,300;0,400;0,500;0,600;1,300&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <!-- ═══ ICONS ═══ -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- ═══ STYLES ═══ -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ══════════════════════════ LOADER ══════════════════════════ -->
+  <!-- Premium loading screen shown briefly on first visit -->
+  <div class="loader" id="loader">
+    <div class="loader-content">
+      <div class="loader-logo">
+        <span class="l-bracket">&lt;</span>DP<span class="l-slash">/</span><span class="l-bracket">&gt;</span>
+      </div>
+      <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
+      <span class="loader-text">Initializing...</span>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════ CURSOR ══════════════════════════ -->
+  <!-- Custom cursor — hidden on touch devices via CSS -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- ══════════════════════════ PARTICLES ══════════════════════════ -->
+  <!-- Canvas for floating particle background rendered via JS -->
+  <canvas id="particleCanvas"></canvas>
+
+  <!-- ══════════════════════════ NAVBAR ══════════════════════════ -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <!-- Logo -->
+      <a href="#home" class="nav-logo">
+        <span class="l-bracket">&lt;</span>Dhruvi<span class="l-accent">/</span><span class="l-bracket">&gt;</span>
+      </a>
+
+      <!-- Desktop links -->
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home"          class="nav-link active">Home</a></li>
+        <li><a href="#about"         class="nav-link">About</a></li>
+        <li><a href="#skills"        class="nav-link">Skills</a></li>
+        <li><a href="#projects"      class="nav-link">Projects</a></li>
+        <li><a href="#internship"    class="nav-link">Experience</a></li>
+        <li><a href="#certifications" class="nav-link">Certifications</a></li>
+        <li><a href="#education"     class="nav-link">Education</a></li>
+        <li><a href="#contact"       class="nav-link">Contact</a></li>
+      </ul>
+
+      <!-- Hire me CTA (desktop) -->
+      <a href="mailto:dhruvipipalva1411@gmail.com" class="nav-cta">Hire Me</a>
+
+      <!-- Hamburger (mobile) -->
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <!-- Mobile drawer -->
+    <div class="mobile-menu" id="mobileMenu">
+      <ul>
+        <li><a href="#home"           class="mob-link">Home</a></li>
+        <li><a href="#about"          class="mob-link">About</a></li>
+        <li><a href="#skills"         class="mob-link">Skills</a></li>
+        <li><a href="#projects"       class="mob-link">Projects</a></li>
+        <li><a href="#internship"     class="mob-link">Experience</a></li>
+        <li><a href="#certifications" class="mob-link">Certifications</a></li>
+        <li><a href="#education"      class="mob-link">Education</a></li>
+        <li><a href="#contact"        class="mob-link">Contact</a></li>
+      </ul>
+      <a href="mailto:dhruvipipalva1411@gmail.com" class="btn btn-primary mob-cta">Hire Me</a>
+    </div>
+  </nav>
+
+  <!-- ══════════════════════════ HERO ══════════════════════════ -->
+  <section class="hero" id="home">
+    <!-- Ambient blobs (CSS animated) -->
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+
+    <div class="hero-inner container">
+
+      <!-- ── Left: Text content ── -->
+      <div class="hero-text" data-reveal>
+
+        <!-- Status badge -->
+        <div class="hero-badge">
+          <span class="badge-pulse"></span>
+          <span>Available for hire</span>
+        </div>
+
+        <!-- Main heading -->
+        <h1 class="hero-name">
+          Hi, I'm <br />
+          <span class="name-highlight">Dhruvi Pipalva</span>
+        </h1>
+
+        <!-- Typing animation line -->
+        <div class="hero-typing-wrap">
+          <span class="typing-prefix">I build&nbsp;</span>
+          <span class="typing-text" id="typingText"></span>
+          <span class="typing-caret"></span>
+        </div>
+
+        <!-- Sub-description -->
+        <p class="hero-sub">
+          Python · Backend Developer with a passion for crafting efficient and scalable
+          backend systems. I specialise in building robust APIs, optimising database
+          performance, and designing cloud-native architectures.
+        </p>
+
+        <!-- CTA buttons -->
+        <div class="hero-actions">
+          <!-- ↓ Change href to your actual resume path inside /assets -->
+          <a href="assets/resume.pdf" download class="btn btn-primary">
+            <i class="fas fa-download"></i> Download Resume
+          </a>
+          <a href="#projects" class="btn btn-ghost">
+            View My Work <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <!-- Social chips -->
+        <div class="hero-socials">
+          <a href="https://github.com/Dhruvipipalva1411" target="_blank" rel="noreferrer" class="social-chip" aria-label="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/dhruvipipalva" target="_blank" rel="noreferrer" class="social-chip" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="mailto:dhruvipipalva1411@gmail.com" class="social-chip" aria-label="Email">
+            <i class="fas fa-envelope"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- ── Right: Photo area ── -->
+      <div class="hero-photo-wrap" data-reveal data-delay="200">
+        <!-- Rotating ring decorations -->
+        <div class="photo-ring ring-outer"></div>
+        <div class="photo-ring ring-inner"></div>
+
+        <!-- Profile image — place your photo at assets/profile.jpeg -->
+        <div class="photo-frame">
+          <img src="assets/profile.jpeg" alt="Dhruvi Pipalva — Python Backend Developer" class="profile-img" />
+        </div>
+
+        <!-- Floating badges around photo -->
+        <div class="float-badge badge-tl">
+          <i class="fas fa-code"></i>
+          <span>Backend Dev</span>
+        </div>
+        <div class="float-badge badge-br">
+          <i class="fas fa-star"></i>
+          <span>6+ Projects</span>
+        </div>
+        <div class="float-badge badge-tr">
+          <i class="fas fa-brain"></i>
+          <span>AI / ML</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="scroll-indicator">
+      <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
+      <span>Scroll down</span>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════ ABOUT ══════════════════════════ -->
+  <section class="section about" id="about">
+    <div class="container">
+
+      <div class="section-tag" data-reveal>About Me</div>
+      <h2 class="section-title" data-reveal>
+        Crafting code that<br /><span class="grad-text">tells a story</span>
+      </h2>
+
+      <div class="about-grid">
+
+        <!-- Left: bio text + stats -->
+        <div class="about-text" data-reveal>
+          <p>
+            I'm a passionate backend developer with a knack for turning complex problems
+            into elegant solutions. With over 1+ year of experience, I've had the
+            privilege of working on a diverse range of projects — from building scalable
+            APIs to optimising database performance and designing cloud-native architectures.
+          </p>
+          <p>
+            Based in Surat, Gujarat, I hold a B.Tech in Computer Science &amp; Engineering
+            from CHARUSAT University. My journey in tech has been fuelled by a love for
+            learning and a desire to create impactful software. When I'm not coding, you can
+            find me exploring open-source projects, contributing to developer communities,
+            or experimenting with new technologies.
+          </p>
+
+          <!-- Animated counters -->
+          <div class="about-stats">
+            <div class="stat-card">
+              <span class="stat-num" data-count="1">0</span>
+              <span class="stat-plus">+</span>
+              <span class="stat-label">Years Experience</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-num" data-count="6">0</span>
+              <span class="stat-plus">+</span>
+              <span class="stat-label">Projects Delivered</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-num" data-count="3">0</span>
+              <span class="stat-plus">+</span>
+              <span class="stat-label">Internships</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: info cards -->
+        <div class="about-cards" data-reveal data-delay="150">
+
+          <div class="info-card">
+            <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div class="info-body">
+              <span class="info-label">Location</span>
+              <span class="info-value">Surat, Gujarat</span>
+            </div>
+          </div>
+
+          <div class="info-card">
+            <div class="info-icon"><i class="fas fa-graduation-cap"></i></div>
+            <div class="info-body">
+              <span class="info-label">Education</span>
+              <span class="info-value">B.Tech CSE — CHARUSAT University</span>
+            </div>
+          </div>
+
+          <div class="info-card">
+            <div class="info-icon"><i class="fas fa-briefcase"></i></div>
+            <div class="info-body">
+              <span class="info-label">Current Role</span>
+              <span class="info-value">Python · Backend Developer</span>
+            </div>
+          </div>
+
+          <div class="info-card">
+            <div class="info-icon"><i class="fas fa-heart"></i></div>
+            <div class="info-body">
+              <span class="info-label">Interests</span>
+              <span class="info-value">Open Source · Backend System Design</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════ SKILLS ══════════════════════════ -->
+  <section class="section skills" id="skills">
+    <div class="container">
+
+      <div class="section-tag" data-reveal>Technical Expertise</div>
+      <h2 class="section-title" data-reveal>
+        My <span class="grad-text">Skill Stack</span>
+      </h2>
+
+      <div class="skills-grid" data-reveal>
+
+        <!-- ── Languages ── -->
+        <div class="skill-category">
+          <div class="cat-header">
+            <span class="cat-icon"><i class="fas fa-code"></i></span>
+            <h3>Languages</h3>
+          </div>
+          <div class="skill-pills">
+            <div class="skill-pill">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="" class="pill-icon" />
+              Python
+            </div>
+            <div class="skill-pill">
+              <i class="fab fa-js pill-icon-fa"></i>
+              JavaScript
+            </div>
+            <div class="skill-pill">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="" class="pill-icon" />
+              C++
+            </div>
+            <div class="skill-pill">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="" class="pill-icon" />
+              C
+            </div>
+            <div class="skill-pill">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="" class="pill-icon" />
+              SQL
+            </div>
+          </div>
+        </div>
+
+        <!-- ── Frameworks & Backend ── -->
+        <div class="skill-category">
+          <div class="cat-header">
+            <span class="cat-icon cat-icon-2"><i class="fas fa-server"></i></span>
+            <h3>Frameworks &amp; Backend</h3>
+          </div>
+          <div class="skill-pills">
+            <div class="skill-pill">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg" alt="" class="pill-icon pill-invert" />
+              Flask
+            </div>
+            <div class="skill-pill">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" alt="" class="pill-icon" />
+              Django
+            </div>
+            <div class="skill-pill">
+              <i class="fab fa-node-js pill-icon-fa"></i>
+              Node.js
+            </div>
+            <div class="skill-pill">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="" class="pill-icon pill-invert" />
+              Express.js
+            </div>
+            <div class="skill-pill">
+              <i class="fab fa-react pill-icon-fa"></i>
+              React JS
+            </div>
+            <div class="skill-pill">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/streamlit/streamlit-original.svg" alt="" class="pill-icon" />
+              Streamlit
+            </div>
+          </div>
+        </div>
+
+        <!-- ── AI / ML ── -->
+        <div class="skill-category">
+          <div class="cat-header">
+            <span class="cat-icon cat-icon-3"><i class="fas fa-brain"></i></span>
+            <h3>AI / ML &amp; Data Science</h3>
+          </div>
+          <div class="skill-pills">
+            <div class="skill-pill">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" alt="" class="pill-icon" />
+              Machine Learning
+            </div>
+            <div class="skill-pill">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" alt="" class="pill-icon" />
+              Deep Learning
+            </div>
+            <div class="skill-pill">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg" alt="" class="pill-icon" />
+              Computer Vision
+            </div>
+            <div class="skill-pill">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg" alt="" class="pill-icon" />
+              NLP
+            </div>
+            <div class="skill-pill">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" alt="" class="pill-icon" />
+              CNN / LSTM
+            </div>
+            <div class="skill-pill">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="" class="pill-icon" />
+              Time Series
+            </div>
+          </div>
+        </div>
+
+        <!-- ── Databases & Tools ── -->
+        <div class="skill-category">
+          <div class="cat-header">
+            <span class="cat-icon cat-icon-4"><i class="fas fa-database"></i></span>
+            <h3>Databases &amp; Tools</h3>
+          </div>
+          <div class="skill-pills">
+            <div class="skill-pill">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="" class="pill-icon" />
+              MySQL
+            </div>
+            <div class="skill-pill">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="" class="pill-icon" />
+              MongoDB
+            </div>
+            <div class="skill-pill">
+              <i class="fab fa-git-alt pill-icon-fa"></i>
+              Git
+            </div>
+            <div class="skill-pill">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="" class="pill-icon" />
+              VS Code
+            </div>
+            <div class="skill-pill">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" alt="" class="pill-icon" />
+              Power BI
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════ PROJECTS ══════════════════════════ -->
+  <section class="section projects" id="projects">
+    <div class="container">
+
+      <div class="section-tag" data-reveal>Portfolio</div>
+      <h2 class="section-title" data-reveal>
+        Selected <span class="grad-text">Projects</span>
+      </h2>
+
+      <div class="projects-grid">
+
+        <!-- PROJECT 01 — Featured (full-width card) -->
+        <div class="project-card featured" data-reveal>
+          <div class="project-glow"></div>
+          <div class="proj-header">
+            <span class="proj-num">01</span>
+            <span class="proj-featured-tag">Featured</span>
+            <div class="proj-links">
+              <a href="https://github.com/Dhruvipipalva1411" target="_blank" rel="noreferrer" aria-label="GitHub" class="proj-icon-link">
+                <i class="fab fa-github"></i>
+              </a>
+              <a href="#" aria-label="Live Demo" class="proj-icon-link">
+                <i class="fas fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+          </div>
+          <h3 class="proj-title">MedX Diagnosis</h3>
+          <p class="proj-desc">Full-stack disease prediction platform integrating 5+ ML/DL models (SVM, Random Forest, CNN) for real-time diagnosis of diabetes, heart disease, and cancer. Built RESTful APIs with Node.js/Express and a React frontend achieving sub-500ms inference latency, with role-based access and interactive result dashboards.</p>
+          <div class="proj-stack">
+            <span>React JS</span><span>Node.js</span><span>Express.js</span>
+            <span>MongoDB</span><span>Python</span><span>TensorFlow</span><span>CNN</span>
+          </div>
+        </div>
+
+        <!-- PROJECT 02 -->
+        <div class="project-card" data-reveal data-delay="100">
+          <div class="project-glow"></div>
+          <div class="proj-header">
+            <span class="proj-num">02</span>
+            <div class="proj-links">
+              <a href="https://github.com/Dhruvipipalva1411" target="_blank" rel="noreferrer" aria-label="GitHub" class="proj-icon-link">
+                <i class="fab fa-github"></i>
+              </a>
+              <a href="https://github.com/Dhruvipipalva1411" aria-label="Live Demo" class="proj-icon-link">
+                <i class="fas fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+          </div>
+          <h3 class="proj-title">Deepfake Video Detection</h3>
+          <p class="proj-desc">Hybrid CNN + LSTM architecture capturing spatial and temporal features, reaching 82.5% detection accuracy on a benchmark deepfake dataset. Deployed via Django with real-time video upload and frame-level analysis supporting MP4 and AVI.</p>
+          <div class="proj-stack">
+            <span>Python</span><span>CNN</span><span>LSTM</span><span>Django</span><span>OpenCV</span>
+          </div>
+        </div>
+
+        <!-- PROJECT 03 -->
+        <div class="project-card" data-reveal data-delay="200">
+          <div class="project-glow"></div>
+          <div class="proj-header">
+            <span class="proj-num">03</span>
+            <div class="proj-links">
+              <a href="https://github.com/Dhruvipipalva1411" target="_blank" rel="noreferrer" aria-label="GitHub" class="proj-icon-link">
+                <i class="fab fa-github"></i>
+              </a>
+              <a href="https://github.com/Dhruvipipalva1411" aria-label="Live Demo" class="proj-icon-link">
+                <i class="fas fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+          </div>
+          <h3 class="proj-title">Resume Screening System</h3>
+          <p class="proj-desc">NLP-powered candidate ranking engine automating job-description relevance scoring, cutting recruiter review time by 60%. Streamlit interface with real-time parsing and multi-criteria scoring, validated on 500+ resumes.</p>
+          <div class="proj-stack">
+            <span>Python</span><span>NLP</span><span>Streamlit</span><span>Scikit-learn</span>
+          </div>
+        </div>
+
+        <!-- PROJECT 04 -->
+        <div class="project-card" data-reveal data-delay="100">
+          <div class="project-glow"></div>
+          <div class="proj-header">
+            <span class="proj-num">04</span>
+            <div class="proj-links">
+              <a href="https://github.com/Dhruvipipalva1411" target="_blank" rel="noreferrer" aria-label="GitHub" class="proj-icon-link">
+                <i class="fab fa-github"></i>
+              </a>
+              <a href="https://github.com/Dhruvipipalva1411" aria-label="Live Demo" class="proj-icon-link">
+                <i class="fas fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+          </div>
+          <h3 class="proj-title">Handwritten Prescription Verification</h3>
+          <p class="proj-desc">AI-powered Flask app extracting and verifying medicine names from handwritten prescriptions using Groq API + custom CRNN (92% accuracy). 4-algorithm fuzzy-match engine against a 491-medicine database, reducing manual verification effort by ~70%.</p>
+          <div class="proj-stack">
+            <span>Flask</span><span>CRNN</span><span>Groq API</span><span>Python</span><span>OCR</span>
+          </div>
+        </div>
+
+        <!-- PROJECT 05 -->
+        <div class="project-card" data-reveal data-delay="200">
+          <div class="project-glow"></div>
+          <div class="proj-header">
+            <span class="proj-num">05</span>
+            <div class="proj-links">
+              <a href="https://github.com/Dhruvipipalva1411" target="_blank" rel="noreferrer" aria-label="GitHub" class="proj-icon-link">
+                <i class="fab fa-github"></i>
+              </a>
+              <a href="https://github.com/Dhruvipipalva1411" aria-label="Live Demo" class="proj-icon-link">
+                <i class="fas fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+          </div>
+          <h3 class="proj-title">Stock Market Forecaster</h3>
+          <p class="proj-desc">End-to-end time series forecasting using ARIMA, LSTM, and Prophet models. Improved 30-day prediction MAPE by 18% through ensemble model selection and hyperparameter tuning on real market data.</p>
+          <div class="proj-stack">
+            <span>Python</span><span>LSTM</span><span>ARIMA</span><span>Prophet</span><span>Pandas</span>
+          </div>
+        </div>
+
+        <!-- PROJECT 06 -->
+        <div class="project-card" data-reveal data-delay="300">
+          <div class="project-glow"></div>
+          <div class="proj-header">
+            <span class="proj-num">06</span>
+            <div class="proj-links">
+              <a href="https://github.com/Dhruvipipalva1411" target="_blank" rel="noreferrer" aria-label="GitHub" class="proj-icon-link">
+                <i class="fab fa-github"></i>
+              </a>
+              <a href="https://github.com/Dhruvipipalva1411" aria-label="Live Demo" class="proj-icon-link">
+                <i class="fas fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+          </div>
+          <h3 class="proj-title">Healthcare Recommendation AI</h3>
+          <p class="proj-desc">Deep learning recommendation system matching patient symptoms with personalised medical suggestions across 12 disease categories, powered by NLP and trained on clinical symptom datasets.</p>
+          <div class="proj-stack">
+            <span>Python</span><span>NLP</span><span>Deep Learning</span><span>Flask</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════ INTERNSHIP / EXPERIENCE ══════════════════════════ -->
+  <section class="section internship" id="internship">
+    <div class="container">
+
+      <div class="section-tag" data-reveal>Early Career</div>
+      <h2 class="section-title" data-reveal>
+        Internship <span class="grad-text">Journey</span>
+      </h2>
+
+      <div class="timeline">
+
+        <!-- INTERNSHIP 01 -->
+        <div class="tl-item" data-reveal>
+          <div class="tl-dot"><div class="tl-dot-core"></div></div>
+          <div class="tl-card">
+            <div class="tl-header">
+              <div class="tl-meta">
+                <h3 class="tl-role">Python — AI / ML</h3>
+                <span class="tl-company">
+                  <i class="fas fa-building"></i> Nevish Infotech — Surat, India
+                </span>
+              </div>
+              <span class="tl-date">Dec 2025 – Apr 2026</span>
+            </div>
+            <p class="tl-desc">Built an AI-powered Flask app for handwritten prescription OCR using Groq API. Trained a custom CRNN model achieving 92% validation accuracy and a 4-algorithm fuzzy-matching engine against 491 medicines, cutting manual verification effort by ~70%.</p>
+            <div class="tl-tags">
+              <span>Python</span><span>Flask</span><span>CRNN</span><span>Groq API</span><span>OCR</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- INTERNSHIP 02 -->
+        <div class="tl-item" data-reveal data-delay="150">
+          <div class="tl-dot"><div class="tl-dot-core"></div></div>
+          <div class="tl-card">
+            <div class="tl-header">
+              <div class="tl-meta">
+                <h3 class="tl-role">AI / ML Intern</h3>
+                <span class="tl-company">
+                  <i class="fas fa-building"></i> Agevole Innovation — Remote
+                </span>
+              </div>
+              <span class="tl-date">Jun 2025 – Aug 2025</span>
+            </div>
+            <p class="tl-desc">Developed a deep learning recommendation system matching patient symptoms with personalised medical suggestions across 12 disease categories, powered by NLP and trained on clinical symptom datasets.</p>
+            <div class="tl-tags">
+              <span>Python</span><span>NLP</span><span>Deep Learning</span><span>Flask</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- INTERNSHIP 03 -->
+        <div class="tl-item" data-reveal data-delay="300">
+          <div class="tl-dot"><div class="tl-dot-core"></div></div>
+          <div class="tl-card">
+            <div class="tl-header">
+              <div class="tl-meta">
+                <h3 class="tl-role">Data Science Intern</h3>
+                <span class="tl-company">
+                  <i class="fas fa-building"></i> Zidio Development — Remote
+                </span>
+              </div>
+              <span class="tl-date">May 2025 – Jul 2025</span>
+            </div>
+            <p class="tl-desc">Conducted time series forecasting for stock market trends using ARIMA, LSTM, and Prophet, improving 30-day prediction MAPE by 18%. Developed a Healthcare Recommendation System using NLP and deep learning to deliver personalised medical suggestions across 12 disease categories.</p>
+            <div class="tl-tags">
+              <span>Python</span><span>LSTM</span><span>ARIMA</span><span>Prophet</span>
+              <span>NLP</span><span>Deep Learning</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════ CERTIFICATIONS ══════════════════════════ -->
+  <!--
+    ╔══════════════════════════════════════════════════════════════════╗
+    ║           NEW SECTION — ADD YOUR CERTIFICATIONS BELOW           ║
+    ║                                                                  ║
+    ║  Each .cert-card block = 1 certification.                       ║
+    ║  To add a new cert: copy one .cert-card div and update:         ║
+    ║    • data-color  → "violet" | "cyan" | "green" | "amber"       ║
+    ║    • .cert-org   → Issuing organisation                         ║
+    ║    • .cert-name  → Certificate name                             ║
+    ║    • .cert-date  → Issue date                                   ║
+    ║    • .cert-skills span → Skills learned                         ║
+    ║    • href on .cert-btn → Link to your certificate (Credly/URL)  ║
+    ╚══════════════════════════════════════════════════════════════════╝
+  -->
+<section class="section certifications" id="certifications">
+  <div class="container">
+
+    <div class="section-tag" data-reveal>Credentials</div>
+    <h2 class="section-title" data-reveal>
+      My <span class="grad-text">Certifications</span>
+    </h2>
+
+    <div class="certs-grid">
+
+      <!-- CERT 01 — Oxford / Saïd Business School (TOP PRIORITY) -->
+      <div class="cert-card" data-reveal data-color="violet">
+        <div class="cert-glow"></div>
+        <div class="cert-top">
+          <div class="cert-org-logo">
+            <i class="fas fa-graduation-cap"></i>
+          </div>
+          <span class="cert-org">Saïd Business School, University of Oxford · Coursera</span>
+        </div>
+        <h3 class="cert-name">Generative and Agentic AI</h3>
+        <span class="cert-date"><i class="fas fa-calendar-alt"></i> Dec 2025</span>
+        <div class="cert-skills">
+          <span>Generative AI</span><span>Agentic AI</span><span>LLMs</span><span>AI Strategy</span>
+        </div>
+        <a href="https://coursera.org/verify/7LY3R96S9IW7" target="_blank" rel="noreferrer" class="cert-btn">
+          View Certificate <i class="fas fa-external-link-alt"></i>
+        </a>
+      </div>
+
+      <!-- CERT 02 — Stanford / DeepLearning.AI (TOP PRIORITY) -->
+      <div class="cert-card" data-reveal data-delay="100" data-color="cyan">
+        <div class="cert-glow"></div>
+        <div class="cert-top">
+          <div class="cert-org-logo">
+            <i class="fas fa-robot"></i>
+          </div>
+          <span class="cert-org">DeepLearning.AI &amp; Stanford University · Coursera</span>
+        </div>
+        <h3 class="cert-name">Supervised Machine Learning: Regression and Classification</h3>
+        <span class="cert-date"><i class="fas fa-calendar-alt"></i> Sep 2024</span>
+        <div class="cert-skills">
+          <span>ML Algorithms</span><span>Regression</span><span>Classification</span><span>Python</span>
+        </div>
+        <a href="https://coursera.org/verify/JI6OQ65YZ2LS" target="_blank" rel="noreferrer" class="cert-btn">
+          View Certificate <i class="fas fa-external-link-alt"></i>
+        </a>
+      </div>
+
+      <!-- CERT 03 — AWS Academy -->
+      <div class="cert-card" data-reveal data-delay="200" data-color="amber">
+        <div class="cert-glow"></div>
+        <div class="cert-top">
+          <div class="cert-org-logo">
+            <i class="fab fa-aws"></i>
+          </div>
+          <span class="cert-org">AWS Academy</span>
+        </div>
+        <h3 class="cert-name">AWS Academy Cloud Developing</h3>
+        <span class="cert-date"><i class="fas fa-calendar-alt"></i> Feb 2025</span>
+        <div class="cert-skills">
+          <span>AWS</span><span>Cloud</span><span>Serverless</span><span>Lambda</span>
+        </div>
+        <a href="https://www.credly.com/go/zhQPXstE" target="_blank" rel="noreferrer" class="cert-btn">
+          View Certificate <i class="fas fa-external-link-alt"></i>
+        </a>
+      </div>
+
+      <!-- CERT 04 — Red Hat -->
+      <div class="cert-card" data-reveal data-delay="100" data-color="green">
+        <div class="cert-glow"></div>
+        <div class="cert-top">
+          <div class="cert-org-logo">
+            <i class="fab fa-redhat"></i>
+          </div>
+          <span class="cert-org">Red Hat · Coursera</span>
+        </div>
+        <h3 class="cert-name">Fundamentals of Red Hat Enterprise Linux 9</h3>
+        <span class="cert-date"><i class="fas fa-calendar-alt"></i> Feb 2024</span>
+        <div class="cert-skills">
+          <span>Linux</span><span>RHEL 9</span><span>OS Admin</span><span>CLI</span>
+        </div>
+        <a href="https://coursera.org/verify/6VVPT92FMPA4" target="_blank" rel="noreferrer" class="cert-btn">
+          View Certificate <i class="fas fa-external-link-alt"></i>
+        </a>
+      </div>
+
+      <!-- CERT 05 — NPTEL / IIT Kharagpur -->
+      <div class="cert-card" data-reveal data-delay="200" data-color="violet">
+        <div class="cert-glow"></div>
+        <div class="cert-top">
+          <div class="cert-org-logo">
+            <i class="fas fa-database"></i>
+          </div>
+          <span class="cert-org">NPTEL · IIT Kharagpur</span>
+        </div>
+        <h3 class="cert-name">Data Base Management System</h3>
+        <span class="cert-date"><i class="fas fa-calendar-alt"></i> Jan–Mar 2024</span>
+        <div class="cert-skills">
+          <span>DBMS</span><span>SQL</span><span>Relational DB</span><span>Queries</span>
+        </div>
+        <a href="assets\DBMS.pdf" target="_blank" rel="noreferrer" class="cert-btn">
+          View Certificate <i class="fas fa-external-link-alt"></i>
+        </a>
+      </div>
+
+      <!-- CERT 06 — Belkasoft -->
+      <div class="cert-card" data-reveal data-delay="300" data-color="cyan">
+        <div class="cert-glow"></div>
+        <div class="cert-top">
+          <div class="cert-org-logo">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <span class="cert-org">Belkasoft</span>
+        </div>
+        <h3 class="cert-name">Windows Forensics with Belkasoft</h3>
+        <span class="cert-date"><i class="fas fa-calendar-alt"></i> Feb 2025</span>
+        <div class="cert-skills">
+          <span>Digital Forensics</span><span>Windows</span><span>Cybersecurity</span>
+        </div>
+        <a href="assets\Belkasoft.pdf" target="_blank" rel="noreferrer" class="cert-btn">
+          View Certificate <i class="fas fa-external-link-alt"></i>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+  <!-- ══════════════════════════ EDUCATION ══════════════════════════ -->
+  <section class="section education" id="education">
+    <div class="container">
+
+      <div class="section-tag" data-reveal>Academic Background</div>
+      <h2 class="section-title" data-reveal>
+        My <span class="grad-text">Education</span>
+      </h2>
+
+      <div class="edu-grid">
+
+        <!-- B.TECH -->
+        <div class="edu-card" data-reveal>
+          <div class="edu-icon"><i class="fas fa-university"></i></div>
+          <div class="edu-body">
+            <span class="edu-degree">B.Tech — Computer Science &amp; Engineering</span>
+            <span class="edu-institution">CHARUSAT University</span>
+            <span class="edu-location"><i class="fas fa-map-marker-alt"></i> Anand, Gujarat</span>
+            <span class="edu-year">2022 – 2026 &nbsp;|&nbsp; 8th Semester Pass</span>
+            <p class="edu-note">Awaiting Final Degree. Focused on Software Engineering, Data Structures, AI/ML, and Database Systems.</p>
+          </div>
+        </div>
+
+        <!-- HSC / 12th -->
+        <div class="edu-card" data-reveal data-delay="150">
+          <div class="edu-icon"><i class="fas fa-school"></i></div>
+          <div class="edu-body">
+            <span class="edu-degree">Higher Secondary — Science (PCM)</span>
+            <span class="edu-institution">Gujarat State Board</span>
+            <span class="edu-location"><i class="fas fa-map-marker-alt"></i> Surat, Gujarat</span>
+            <span class="edu-year">Completed 2022</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════ CONTACT ══════════════════════════ -->
+  <section class="section contact" id="contact">
+    <div class="container">
+
+      <div class="section-tag" data-reveal>Get In Touch</div>
+      <h2 class="section-title" data-reveal>
+        Let's <span class="grad-text">Connect</span>
+      </h2>
+
+      <div class="contact-grid">
+
+        <!-- Left: Contact info -->
+        <div class="contact-info" data-reveal>
+          <p class="contact-tagline">
+            Have a project in mind or just want to say hi? My inbox is always open.
+            I'll try my best to get back to you!
+          </p>
+          <div class="contact-details">
+
+            <a href="mailto:dhruvipipalva1411@gmail.com" class="contact-item">
+              <div class="c-icon"><i class="fas fa-envelope"></i></div>
+              <div>
+                <span class="ci-label">Email</span>
+                <span class="ci-value">dhruvipipalva1411@gmail.com</span>
+              </div>
+            </a>
+
+            <a href="https://www.linkedin.com/in/dhruvipipalva" target="_blank" rel="noreferrer" class="contact-item">
+              <div class="c-icon"><i class="fab fa-linkedin-in"></i></div>
+              <div>
+                <span class="ci-label">LinkedIn</span>
+                <span class="ci-value">linkedin.com/in/dhruvipipalva</span>
+              </div>
+            </a>
+
+            <a href="https://github.com/Dhruvipipalva1411" target="_blank" rel="noreferrer" class="contact-item">
+              <div class="c-icon"><i class="fab fa-github"></i></div>
+              <div>
+                <span class="ci-label">GitHub</span>
+                <span class="ci-value">github.com/Dhruvipipalva1411</span>
+              </div>
+            </a>
+
+          </div>
+        </div>
+
+        <!-- Right: Contact form -->
+        <form class="contact-form" id="contactForm" data-reveal data-delay="150" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="cName">Your Name</label>
+              <input type="text" id="cName" placeholder="First Surname" required />
+            </div>
+            <div class="form-group">
+              <label for="cEmail">Email Address</label>
+              <input type="email" id="cEmail" placeholder="example@gmail.com" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="cSubject">Subject</label>
+            <input type="text" id="cSubject" placeholder="Project Inquiry" />
+          </div>
+          <div class="form-group">
+            <label for="cMsg">Message</label>
+            <textarea id="cMsg" rows="5" placeholder="Tell me about your project…" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">
+            Send Message <i class="fas fa-paper-plane"></i>
+          </button>
+          <!-- Success toast shown via JS -->
+          <div class="form-success" id="formSuccess">
+            <i class="fas fa-check-circle"></i> Message sent! I'll reply soon.
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════ FOOTER ══════════════════════════ -->
+  <footer class="footer">
+    <div class="footer-inner container">
+
+      <div class="footer-logo">
+        <span class="l-bracket">&lt;</span>Dhruvi<span class="l-accent">/</span><span class="l-bracket">&gt;</span>
+      </div>
+
+      <p class="footer-copy">
+        Designed &amp; built by <strong>Dhruvi Pipalva</strong> &copy; <span id="footerYear"></span>
+      </p>
+
+      <div class="footer-socials">
+        <a href="https://github.com/Dhruvipipalva1411" target="_blank" rel="noreferrer" aria-label="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/dhruvipipalva" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="mailto:dhruvipipalva1411@gmail.com" aria-label="Email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Back to top button -->
+  <button class="back-top" id="backTop" aria-label="Back to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- ═══ SCRIPTS ═══ -->
+  <script src="app.js"></script>
+</body>
+</html>
